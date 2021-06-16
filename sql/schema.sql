@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS bear_attacks;
 CREATE TABLE bear_attacks (
     id int PRIMARY KEY,
     name varchar(40),
@@ -9,6 +10,7 @@ CREATE TABLE bear_attacks (
 	bear_type varchar(25)
 );
 
+DROP TABLE IF EXISTS parks_visitation;
 CREATE TABLE parks_visitation (
 	id int PRIMARY KEY,
 	region VARCHAR (10),
@@ -18,6 +20,7 @@ CREATE TABLE parks_visitation (
 	year INT
 );
 
+DROP TABLE IF EXISTS national_parks;
 CREATE TABLE "national_parks" (
     "id" int   NOT NULL,
     "park_code" varchar(30)   NOT NULL,
@@ -31,6 +34,7 @@ CREATE TABLE "national_parks" (
      )
 );
 
+DROP TABLE IF EXISTS park_trails;
 CREATE TABLE "park_trails" (
 	"trail_id" int PRIMARY KEY,
 	"trail_name" varchar,
@@ -53,6 +57,7 @@ CREATE TABLE "park_trails" (
 	REFERENCES national_parks(park_name)
 );
 
+DROP TABLE IF EXISTS trail_activities;
 CREATE TABLE "trail_activities" (
 	id int PRIMARY KEY,
 	"trail_id" int,
@@ -64,6 +69,7 @@ CREATE TABLE "trail_activities" (
 	REFERENCES park_trails(trail_id)
 );
 
+DROP TABLE IF EXISTS trail_features;
 CREATE TABLE "trail_features" (
 	id int PRIMARY KEY,
 	"trail_id" int,
@@ -75,6 +81,7 @@ CREATE TABLE "trail_features" (
 	REFERENCES park_trails(trail_id)
 );
 
+DROP TABLE IF EXISTS species;
 CREATE TABLE "species" (
     "id" int   NOT NULL,
     "species_id" VARCHAR   NOT NULL,
